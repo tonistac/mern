@@ -8,12 +8,22 @@ import {
   Button,
 } from "@chakra-ui/react";
 
+import {
+  ColorModeButton,
+  DarkMode,
+  LightMode,
+  useColorMode,
+  useColorModeValue,
+} from "./ui/color-mode.jsx";
+
 import { Link } from "react-router-dom";
 import { LuSquarePlus } from "react-icons/lu";
 
 const Navbar = () => {
+    const { toggleColorMode } = useColorMode()
+    
   return (
-    <Container maxW="1140px" px={4}>
+    <Container maxW="1140px" px={4} >
       <Flex
         minH="64px"
         alignItems="center"
@@ -37,7 +47,10 @@ const Navbar = () => {
               <LuSquarePlus size={20} />
             </Button>
           </Link>
-          <ColorModeButton />
+            <Button variant="outline" onClick={toggleColorMode}>
+              Toggle Mode
+           </Button>
+           <ColorModeButton />
         </HStack>
       </Flex>
     </Container>
