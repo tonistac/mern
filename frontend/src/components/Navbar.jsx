@@ -21,6 +21,8 @@ import { LuSquarePlus } from "react-icons/lu";
 
 const Navbar = () => {
     const { toggleColorMode } = useColorMode()
+
+
     
   return (
     <Container maxW="1140px" px={4} >

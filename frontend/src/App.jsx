@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
+import { Toaster } from "./components/ui/toaster";
 
 import CreatePage from "./pages/CreatePage";
 import HomePage from "./pages/HomePage";
@@ -12,6 +13,7 @@ import {
   useColorModeValue,
 } from "./components/ui/color-mode.jsx";
 
+
 function App() {
   return (
     <Box minH={"100vh"} bg={useColorModeValue("gray.100", "gray.900")}>
@@ -21,6 +23,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />
       </Routes>
+
+      <Toaster />
     </Box>
   );
 }
