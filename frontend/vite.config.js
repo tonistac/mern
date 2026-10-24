@@ -11,6 +11,18 @@ export default defineConfig({
         changeOrigin: true,
       }
     }
-  }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('@chakra-ui') || id.includes('@emotion')) return 'chakra'
+            if (id.includes('react')) return 'react'
+          }
+        },
+      },
+    },
+  },
 })
 
