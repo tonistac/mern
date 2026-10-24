@@ -33,6 +33,7 @@ const CreatePage = () => {
       closable: true,
     });
     }
+    setNewProduct({ name: "", description: "" , price: "", image: "" });
   };
 
   return ( <Container maxW={"600px"} py={12}>
